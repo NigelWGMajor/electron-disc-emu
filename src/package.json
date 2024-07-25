@@ -1,15 +1,18 @@
 {
-  "name": "_disc",
+  "name": "disc",
   "version": "1.0.0",
   "description": "A simple program to emulate a timer disk.",
   "main": "src/index.js",
   "scripts": {
-     "start": "electron ."
+    "start": "electron .",
+    "watch": "nodemon --exec electron ."
   },
   "keywords": [],
   "author": "nick-major",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^31.3.0"
+    "electron": "^31.3.0",
+    "electron-reload": "^1.5.0",
+    "nodemon": "^3.1.4"
   }
 }

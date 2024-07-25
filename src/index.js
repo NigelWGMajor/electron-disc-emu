@@ -1,10 +1,16 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
+require('electron-reload')(__dirname, {
+    electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
+  });
+
+console.log(__dirname);  
+
 function createWindow() {
     const mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 600,
+        height: 400,
         transparent: true, // Make the window transparent
         frame: true, // Remove window frame
         webPreferences: {
@@ -12,7 +18,7 @@ function createWindow() {
             contextIsolation: true,
         }
     });
-
+    //
     mainWindow.loadFile('index.html');
 }
 
@@ -29,3 +35,7 @@ app.on('activate', () => {
         createWindow();
     }
 });
+
+
+
+//

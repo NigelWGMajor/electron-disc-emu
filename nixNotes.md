@@ -1,4 +1,4 @@
-#  Nix notes
+# Nix notes
 
 tl;dr
 
@@ -42,7 +42,7 @@ your-project/
 ├── package.json
 └── test.html
 
-**index.js**
+## index.js
 
 ```js
 const { app, BrowserWindow } = require('electron');
@@ -78,7 +78,7 @@ app.on('activate', () => {
 });
 ```
 
-**package.json**
+## package.json
 
 Ensure your package.json has a start script to run Electron:
 
@@ -118,7 +118,6 @@ Getting to a git repo:
 
 `git init`
 
-
 `git add .`
 `git commit -m "initial commit"`
 
@@ -127,5 +126,3 @@ Go to [git](https://github.com/NigelWGMajor) and create a public repo with no in
 `git remote add origin https://github.com/NigelWGMajor/electron-disc-emulator.git`
 
 `git push -u origin main`
-
-
