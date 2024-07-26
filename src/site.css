@@ -1,0 +1,147 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgba(14, 94, 31, 0.0);
+    /* 80% opacity */
+
+}
+
+.circle {
+    position: absolute;
+    left: 100px;
+    width: 230px;
+    height: 230px;
+    background-color: rgba(73, 43, 169, 0.133);
+    /* 80% opacity */
+    -webkit-app-region: drag;
+    /* Make the entire body draggable */
+}
+
+.rectangle {
+    position: absolute;
+    left: 100px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(124, 124, 124);
+    /* 90% opacity */
+    transform-origin: 50% 100px;
+}
+
+/* .dot1 {
+    animation: backgroundColorChange 60s infinite;
+    animation-delay: 0s;
+}
+
+.dot2 {
+    animation: backgroundColorChange 60s infinite;
+    animation-delay: 5s;
+}
+
+.dot3 {
+    animation: backgroundColorChange 60s infinite;
+    animation-delay: 10s;
+}
+
+.dot4 {
+    animation: backgroundColorChange 60s infinite;
+    animation-delay: 15s;
+}
+
+.dot5 {
+    animation: backgroundColorChange 60s infinite;
+    animation-delay: 20s;
+}
+
+.dot6 {
+    animation: backgroundColorChange 60s infinite;
+    animation-delay: 25s;
+}
+
+.dot7 {
+    animation: backgroundColorChange 60s infinite;
+    animation-delay: 30s;
+}
+
+.dot8 {
+    animation: backgroundColorChange 60s infinite;
+    animation-delay: 35s;
+}
+
+.dot9 {
+    animation: backgroundColorChange 60s infinite;
+    animation-delay: 40s;
+}
+
+.dota {
+    animation: backgroundColorChange 60s infinite;
+    animation-delay: 45s;
+}
+
+.dotb {
+    animation: backgroundColorChange 60s infinite;
+    animation-delay: 50s;
+}
+
+.dotc {
+    animation: backgroundColorChange 60s infinite;
+    animation-delay: 55s;
+}
+
+/* Keyframes for background color animation */
+@keyframes backgroundColorChange {
+    0% {
+        background-color: rgb(124, 124, 124);
+    }
+
+    8.3% {
+        background-color: rgb(87, 217, 231);
+    }
+
+    16.7% {
+        background-color: rgb(124, 124, 124);
+    }
+
+    25% {
+        background-color: rgb(124, 124, 124);
+    }
+
+    33.3% {
+        background-color: rgb(124, 124, 124);
+    }
+
+    41.7% {
+        background-color: rgb(124, 124, 124);
+    }
+
+    50% {
+        background-color: rgb(124, 124, 124);
+    }
+
+    58.3% {
+        background-color: rgb(124, 124, 124);
+    }
+
+    66.7% {
+        background-color: rgb(124, 124, 124);
+    }
+
+    75% {
+        background-color: rgb(124, 124, 124);
+    }
+
+    83.3% {
+        background-color: rgb(124, 124, 124);
+    }
+
+    91.7% {
+        background-color: rgb(124, 124, 124);
+    }
+
+    100% {
+        background-color: rgb(124, 124, 124);
+    } */
+}
