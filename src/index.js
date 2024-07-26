@@ -14,20 +14,26 @@ function createWindow() {
         transparent: true, // Make the window transparent
         frame: false, // Remove window frame
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js'),
-            contextIsolation: true,
+            //  preload: path.join(__dirname, 'preload.js'),
+            contextIsolation: false,
+            nodeIntegration: true,
+            enableRemoteModule: true,
+            devTools: true
         }
     });
     //
     mainWindow.loadFile('index.html');
 
-    // Wait for the DOM to be fully loaded before changing colors
-    mainWindow.webContents.on('did-finish-load', () => {
-        mainWindow.webContents.executeJavaScript(
-        `setInterval(changeDotColors, 100);`
-    );
-    });
+    // Set the window to always stay on top
+    mainWindow.setAlwaysOnTop(true);
 
+    // Wait for the DOM to be fully loaded before launching the timed loop
+    // mainWindow.webContents.on('did-finish-load', () => {
+    //     mainWindow.webContents.executeJavaScript(
+    //         // set the interval here (milliseconds):
+    //         `setInterval(changeDotColors, 10);`
+    //     );
+    // });
 }
 
 app.on('ready', createWindow);

@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="site.css">
     <title>Radial Rectangles</title>
     <script>
+        let colorChangeInterval = 100;
+        let intervalId = 0;
+
+        // Function to handle mouse wheel events
+        function handleMouseWheel(event) {
+            console.log('Mouse wheel event:', event);
+            // Add your logic here
+        }
+
+        // Function to handle mouse click events
+        function handleClick(event) {
+            console.log('Click event:', event);
+            if (intervalId) {
+                clearInterval(intervalId);
+                colorChangeInterval *= 2;
+                if (colorChangeInterval > 1000) {
+                    colorChangeInterval = 10;
+                }
+                intervalId = setInterval(changeDotColors, colorChangeInterval);
+            } else {
+                colorChangeInterval = 1000; // Initial interval in milliseconds
+                intervalId = setInterval(changeDotColors, colorChangeInterval);
+            }
+        }
+
+        // Add event listeners when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            document.addEventListener('wheel', handleMouseWheel);
+            document.addEventListener('click', handleClick);
+        });
         // Function to generate a random color
         function getRandomColor() {
             const r = Math.floor(Math.random() * 256);
@@ -28,6 +59,7 @@
         window.changeDotColors = changeDotColors;
     </script>
 </head>
+
 <body>
     <div class="circle">
         <!-- Generate 12 rectangles -->
@@ -45,29 +77,5 @@
         <div class="rectangle dot12" style="transform: rotate(330deg);"></div>
     </div>
 </body>
-</html>
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semi-Transparent Page</title>
-    <style>
-        body {
-            background-color: rgba(240, 240, 240, 0.8); /* 80% opacity */
-        }
-        .content {
-            background-color: rgba(255, 255, 255, 0.9); /* 90% opacity */
-            padding: 20px;
-            border-radius: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="content">
-        <h1>Hello, World!</h1>
-        <p>This is a semi-transparent page.</p>
-    </div>
-</body>
-</html> -->
+</html>
