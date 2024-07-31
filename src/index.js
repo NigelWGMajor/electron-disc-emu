@@ -24,16 +24,7 @@ function createWindow() {
     //
     mainWindow.loadFile('index.html');
 
-    // Set the window to always stay on top
     mainWindow.setAlwaysOnTop(true);
-
-    // Wait for the DOM to be fully loaded before launching the timed loop
-    // mainWindow.webContents.on('did-finish-load', () => {
-    //     mainWindow.webContents.executeJavaScript(
-    //         // set the interval here (milliseconds):
-    //         `setInterval(changeDotColors, 10);`
-    //     );
-    // });
 }
 
 app.on('ready', createWindow);

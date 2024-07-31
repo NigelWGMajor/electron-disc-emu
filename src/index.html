@@ -45,37 +45,110 @@
             return `rgb(${r}, ${g}, ${b})`;
         }
 
-        // Function to change the background color of the dots
         function changeDotColors() {
-            for (let i = 1; i <= 12; i++) {
-                const dot = document.querySelector(`.dot${i}`);
+            for (let i = 0; i < 24; i++) {
+                const dot = document.getElementById(`dot${i}`);
                 if (dot) {
                     dot.style.backgroundColor = getRandomColor();
                 }
             }
         }
 
+        function createRectangles() {
+            const circle = document.getElementById('circle');
+            const totalRectangles = 24;
+            const angleStep = 360 / totalRectangles;
+
+            for (let i = 0; i < totalRectangles; i++) {
+                const angle = i * angleStep;
+                const rectangle = document.createElement('div');
+                rectangle.className = 'rectangle';
+                rectangle.id = `dot${i}`;
+                rectangle.style.transform = `rotate(${angle}deg)`;
+                circle.appendChild(rectangle);
+            }
+        }
+
         // Expose the function to the global scope
         window.changeDotColors = changeDotColors;
+
+        window.onload = createRectangles;
     </script>
 </head>
 
 <body>
-    <div class="circle">
-        <!-- Generate 12 rectangles -->
-        <div class="rectangle dot1" style="transform: rotate(0deg);"></div>
-        <div class="rectangle dot2" style="transform: rotate(30deg);"></div>
-        <div class="rectangle dot3" style="transform: rotate(60deg);"></div>
-        <div class="rectangle dot4" style="transform: rotate(90deg);"></div>
-        <div class="rectangle dot5" style="transform: rotate(120deg);"></div>
-        <div class="rectangle dot6" style="transform: rotate(150deg);"></div>
-        <div class="rectangle dot7" style="transform: rotate(180deg);"></div>
-        <div class="rectangle dot8" style="transform: rotate(210deg);"></div>
-        <div class="rectangle dot9" style="transform: rotate(240deg);"></div>
-        <div class="rectangle dot10" style="transform: rotate(270deg);"></div>
-        <div class="rectangle dot11" style="transform: rotate(300deg);"></div>
-        <div class="rectangle dot12" style="transform: rotate(330deg);"></div>
-    </div>
+    <div class="circle" id="circle"></div>
 </body>
 
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parametric Rectangles</title>
+    <style>
+        .circle {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+        .rectangle {
+            position: absolute;
+            width: 20px;
+            height: 10px;
+            background-color: red;
+            top: 50%;
+            left: 50%;
+            transform-origin: 0 0;
+        }
+    </style>
+    <script>
+        // Function to generate a random color
+        function getRandomColor() {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            return `rgb(${r}, ${g}, ${b})`;
+        } -->
+
+        <!-- // Function to change the background color of the dots
+        function changeDotColors() {
+            for (let i = 0; i < 24; i++) {
+                const dot = document.getElementById(`dot${i}`);
+                if (dot) {
+                    dot.style.backgroundColor = getRandomColor();
+                }
+            }
+        }
+
+        // Function to create rectangles
+        function createRectangles() {
+            const circle = document.getElementById('circle');
+            const totalRectangles = 24;
+            const angleStep = 360 / totalRectangles;
+
+            for (let i = 0; i < totalRectangles; i++) {
+                const angle = i * angleStep;
+                const rectangle = document.createElement('div');
+                rectangle.className = 'rectangle';
+                rectangle.id = `dot${i}`;
+                rectangle.style.transform = `rotate(${angle}deg)`;
+                circle.appendChild(rectangle);
+            }
+        } -->
+<!-- 
+        // Expose the function to the global scope
+        window.changeDotColors = changeDotColors;
+
+        // Create rectangles on page load
+        window.onload = createRectangles;
+    </script>
+</head>
+<body>
+    <div class="circle" id="circle"></div>
+</body>
+</html> -->

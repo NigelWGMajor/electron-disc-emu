@@ -13,17 +13,18 @@ body {
     left: 100px;
     width: 230px;
     height: 230px;
-    background-color: rgba(73, 43, 169, 0.1);
+    background-color: rgba(77, 77, 77, 0.1);
     /* Make the entire body draggable */
     pointer-events: none; /* Allow mouse events to pass through */
 }
 
 .rectangle {
+    border-radius: 4px;
     position: absolute;
     left: 100px;
     top: 20px;
-    width: 30px;
-    height: 30px;
+    width: 17px;
+    height: 17px;
     background-color: rgb(124, 124, 124);
     /* 90% opacity */
     transform-origin: 50% 100px;
